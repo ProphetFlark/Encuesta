@@ -1,0 +1,89 @@
+###
+POST http://localhost:9000/api/encuesta HTTP/1.1
+Content-Type: application/json
+
+{
+  "titulo": "Encuesta #8",
+  "propietario": "josueelmacho@gmail.com",
+  "descripcion": "Encuesta para evaluar 8",
+  "preguntas": [
+    {
+      "tipo": "opciones",
+      "texto": "¿numeros?",
+      "opciones": ["1", "a", "3", "z"],
+      "respuestas": [1,0,1,0]
+    },
+    {
+      "tipo": "opciones",
+      "texto": "¿Ropa?",
+      "opciones": ["Manzana", "Pera", "Piedra", "Zapato"],
+      "respuestas": [1,1,0,0]
+    },
+    {
+      "tipo": "vf",
+      "texto": "¿Es hombre?",
+      "opciones": ["Si", "No"],
+      "respuestas": [1,0]
+    }
+  ]
+}
+
+
+
+###
+
+###
+GET http://localhost:9000/api/encuesta HTTP/1.1
+
+###
+
+###
+GET http://localhost:9000/api/encuesta/64582c21705dd5dab244e882 HTTP/1.1
+
+###
+
+###
+PUT http://localhost:9000/api/encuesta/respuesta/645da21e0b7a83eff9cb45d3 HTTP/1.1
+Content-Type: application/json
+
+{
+  "usuario": "JosueElNeruda@gmail.com",
+  "respuestas": [
+    [1, 0, 0],
+    [0, 1],
+    [0, 0, 1],
+    [1,0]
+  ]
+}
+
+
+###############################################################################################################
+###############################################################################################################
+###############################################################################################################
+
+
+###
+POST http://localhost:9000/api/user HTTP/1.1
+Content-Type: application/json
+
+{
+  "email": "josuemorales@gmail.com",
+  "contraseña": "123456",
+  "fechanac": "2000-01-01",
+  "genero": "Hombre",
+  "civil": "Divorciado/a",
+  "escolaridad": "Universidad",
+  "role": false
+}
+
+
+
+###
+
+###
+GET http://localhost:9000/api/user HTTP/1.1
+
+###
+GET http://localhost:9000/api/user/carlosjuanta@gmail.com HTTP/1.1
+
+
